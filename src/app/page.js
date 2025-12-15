@@ -40,7 +40,13 @@ const DecryptText = ({ text }) => {
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen font-sans selection:bg-purple-500 selection:text-white">
+    <div className="min-h-screen font-sans selection:bg-purple-500 selection:text-white relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float-slower"></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl animate-float-slowest"></div>
+      </div>
       {/* Navigation */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
@@ -49,14 +55,7 @@ export default function Portfolio() {
         className="fixed w-full z-50 glass-nav"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
-          <motion.h1
-            initial={{ rotate: -180, scale: 0 }}
-            animate={{ rotate: 0, scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.3 }}
-            className="text-lg sm:text-xl font-bold tracking-tighter"
-          >
-            PV.
-          </motion.h1>
+          <h1 className="text-lg sm:text-xl font-bold tracking-tighter">PV.</h1>
           <div className="hidden sm:flex gap-4 md:gap-6 text-xs sm:text-sm text-gray-300">
             <a href="#about" className="hover:text-white transition-colors">
               About
@@ -80,180 +79,103 @@ export default function Portfolio() {
       {/* Hero Section */}
       <header className="pt-20 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.5 }}
-            className="glass-card p-1 rounded-full w-fit mb-4 sm:mb-6"
-          >
-            <motion.span
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="px-3 sm:px-4 py-1 text-[10px] sm:text-xs font-medium text-purple-300 bg-purple-500/10 rounded-full border border-purple-500/20"
-            >
+          <div className="glass-card p-1 rounded-full w-fit mb-4 sm:mb-6">
+            <span className="px-3 sm:px-4 py-1 text-[10px] sm:text-xs font-medium text-purple-300 bg-purple-500/10 rounded-full border border-purple-500/20 inline-block">
               Open to Work • 2026 Grad
-            </motion.span>
-          </motion.div>
-          <div className="flex items-center gap-3 sm:gap-6 mb-2 sm:mb-3">
-            <motion.h1
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight"
-            >
-              Hi, I&apos;m{" "}
-              <span className="text-gradient animate-text-flow">
-                <DecryptText text="Puneet Verma" />
-              </span>
-            </motion.h1>
+            </span>
           </div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="text-sm sm:text-lg md:text-xl text-gray-500 italic mb-4 sm:mb-6"
-          >
-            Building Differently
-          </motion.p>
-          <motion.p
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="text-base sm:text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed mb-6 sm:mb-8"
-          >
+          <div className="flex items-center gap-3 sm:gap-6 mb-2 sm:mb-3">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight">
+              Hi, I&apos;m <span className="text-gradient">Puneet Verma</span>
+            </h1>
+          </div>
+          <p className="text-sm sm:text-lg md:text-xl text-blue-400 italic mb-4 sm:mb-6">
+            Building Differently<span className="cursor-blink">|</span>
+          </p>
+          <p className="text-base sm:text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed mb-6 sm:mb-8">
             Full Stack Developer & AI/ML Engineer.{" "}
             <br className="hidden sm:block" />
             <span className="sm:inline"> </span>
             Bridging the gap between{" "}
             <span className="text-white">scalable .NET systems</span> and{" "}
             <span className="text-white">intelligent AI solutions</span>.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-          >
-            <motion.a
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a
               href="mailto:verma0404puneet@gmail.com"
-              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all text-sm sm:text-base"
+              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all text-sm sm:text-base"
             >
               <Mail size={18} className="sm:w-5 sm:h-5" />
               <span className="truncate">verma0404puneet@gmail.com</span>
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+            </a>
+            <a
               href="https://github.com/PuneetVerma04"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 glass-card rounded-lg hover:bg-white/10 transition-all text-sm sm:text-base"
+              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 glass-card rounded-lg hover:bg-purple-500/10 transition-all text-sm sm:text-base"
             >
               <Github size={18} className="sm:w-5 sm:h-5" /> GitHub
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+            </a>
+            <a
               href="https://www.linkedin.com/in/puneet-verma-595176259/"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 glass-card rounded-lg hover:bg-white/10 transition-all text-sm sm:text-base"
+              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 glass-card rounded-lg hover:bg-blue-500/10 transition-all text-sm sm:text-base"
             >
               <Linkedin size={18} className="sm:w-5 sm:h-5" /> LinkedIn
-            </motion.a>
-          </motion.div>
+            </a>
+          </div>
         </div>
       </header>
 
       {/* Skills Section */}
       <section id="skills" className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <motion.h2
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 flex items-center gap-2 sm:gap-3"
-          >
-            <motion.div
-              animate={{ y: [-5, 5, -5] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Terminal className="text-purple-400 w-6 h-6 sm:w-7 sm:h-7" />
-            </motion.div>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 flex items-center gap-2 sm:gap-3">
+            <Terminal className="text-purple-400 w-6 h-6 sm:w-7 sm:h-7" />
             Technical Arsenal
-          </motion.h2>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
-              <SkillCard
-                icon={<Code className="text-blue-400" />}
-                title="Languages"
-                skills={["Java", "C#", "Python", "JavaScript", "SQL"]}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-            >
-              <SkillCard
-                icon={<Database className="text-green-400" />}
-                title="Frameworks"
-                skills={[
-                  "ASP.NET Core",
-                  "FastAPI",
-                  "React",
-                  "TensorFlow",
-                  "PyTorch",
-                ]}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-            >
-              <SkillCard
-                icon={<Cloud className="text-orange-400" />}
-                title="Cloud & DevOps"
-                skills={[
-                  "AWS",
-                  "Docker",
-                  "Kubernetes",
-                  "CI/CD",
-                  "GitHub Actions",
-                ]}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.4 }}
-            >
-              <SkillCard
-                icon={<Terminal className="text-purple-400" />}
-                title="AI & LLM"
-                skills={[
-                  "RAG Architecture",
-                  "LangChain",
-                  "LangGraph",
-                  "Ollama",
-                  "NLP",
-                ]}
-              />
-            </motion.div>
+            <SkillCard
+              icon={<Code className="text-blue-400" />}
+              title="Languages"
+              skills={["Java", "C#", "Python", "JavaScript", "SQL"]}
+            />
+            <SkillCard
+              icon={<Database className="text-purple-400" />}
+              title="Frameworks"
+              skills={[
+                "ASP.NET Core",
+                "FastAPI",
+                "React",
+                "TensorFlow",
+                "PyTorch",
+              ]}
+            />
+            <SkillCard
+              icon={<Cloud className="text-blue-400" />}
+              title="Cloud & DevOps"
+              skills={[
+                "AWS",
+                "Docker",
+                "Kubernetes",
+                "CI/CD",
+                "GitHub Actions",
+              ]}
+            />
+            <SkillCard
+              icon={<Terminal className="text-purple-400" />}
+              title="AI & LLM"
+              skills={[
+                "RAG Architecture",
+                "LangChain",
+                "LangGraph",
+                "Ollama",
+                "NLP",
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -261,71 +183,34 @@ export default function Portfolio() {
       {/* Projects */}
       <section id="projects" className="py-12 sm:py-20 px-4 sm:px-6 bg-white/0">
         <div className="max-w-6xl mx-auto">
-          <motion.h2
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12"
-          >
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">
             Projects
-          </motion.h2>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <ProjectCard
-                title="RAG-Based PDF Insight Generator"
-                description="A local AI-powered system that chunks PDFs and retrieves context-aware summaries using LangGraph for dynamic workflow routing."
-                tags={["Python", "LangChain", "Ollama", "RAG"]}
-                link="https://github.com/PuneetVerma04/RAG-Based-PDF-Insight-Generator"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <ProjectCard
-                title="Gray Zone Game Store"
-                description="Full-stack .NET platform with RESTful APIs, Blazor components, and async CRUD operations."
-                tags={["ASP.NET Core", "Blazor", "SQL Server", "C#"]}
-                link="https://github.com/PuneetVerma04/Gray-Zone-Backend"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <ProjectCard
-                title="EdgeLens: Vision Microservice"
-                description="Industrial defect detection system achieving 99% accuracy with ResNet50, served via FastAPI and containerized with Docker."
-                tags={["PyTorch", "FastAPI", "Docker", "MongoDB"]}
-                link="https://github.com/PuneetVerma04/EdgeLens"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <ProjectCard
-                title="End-to-End CI/CD Pipeline (Under Development)"
-                description="Automated multi-service build and deployment pipeline for .NET applications using GitHub Actions and AWS EC2."
-                tags={["DevOps", "GitHub Actions", "AWS", "Docker"]}
-                link="https://github.com/PuneetVerma04/"
-              />
-            </motion.div>
+            <ProjectCard
+              title="RAG-Based PDF Insight Generator"
+              description="A local AI-powered system that chunks PDFs and retrieves context-aware summaries using LangGraph for dynamic workflow routing."
+              tags={["Python", "LangChain", "Ollama", "RAG"]}
+              link="https://github.com/PuneetVerma04/RAG-Based-PDF-Insight-Generator"
+            />
+            <ProjectCard
+              title="Gray Zone Game Store"
+              description="Full-stack .NET platform with RESTful APIs, Blazor components, and async CRUD operations."
+              tags={["ASP.NET Core", "Blazor", "SQL Server", "C#"]}
+              link="https://github.com/PuneetVerma04/Gray-Zone-Backend"
+            />
+            <ProjectCard
+              title="EdgeLens: Vision Microservice"
+              description="Industrial defect detection system achieving 99% accuracy with ResNet50, served via FastAPI and containerized with Docker."
+              tags={["PyTorch", "FastAPI", "Docker", "MongoDB"]}
+              link="https://github.com/PuneetVerma04/EdgeLens"
+            />
+            <ProjectCard
+              title="End-to-End CI/CD Pipeline (Under Development)"
+              description="Automated multi-service build and deployment pipeline for .NET applications using GitHub Actions and AWS EC2."
+              tags={["DevOps", "GitHub Actions", "AWS", "Docker"]}
+              link="https://github.com/PuneetVerma04/"
+            />
           </div>
         </div>
       </section>
@@ -334,12 +219,7 @@ export default function Portfolio() {
       <section id="experience" className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Work Experience */}
-          <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
               Experience
             </h2>
@@ -366,15 +246,10 @@ export default function Portfolio() {
                 </li>
               </ul>
             </div>
-          </motion.div>
+          </div>
 
           {/* Research & Certs */}
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
               Research & Certs
             </h2>
@@ -434,7 +309,7 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -449,97 +324,60 @@ export default function Portfolio() {
 // Helper Components
 function SkillCard({ icon, title, skills }) {
   return (
-    <motion.div
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300 }}
-      className="glass-card p-4 sm:p-6 rounded-2xl hover:bg-white/5 transition-all"
-    >
-      <motion.div
-        whileHover={{ rotate: [0, -10, 10, -10, 0] }}
-        transition={{ duration: 0.5 }}
-        className="mb-3 sm:mb-4"
-      >
-        {icon}
-      </motion.div>
+    <div className="glass-card p-4 sm:p-6 rounded-2xl hover:bg-purple-500/5 transition-all">
+      <div className="mb-3 sm:mb-4">{icon}</div>
       <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">
         {title}
       </h3>
       <div className="flex flex-wrap gap-2">
-        {skills.map((skill, index) => (
-          <motion.span
+        {skills.map((skill) => (
+          <span
             key={skill}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.05 }}
-            whileHover={{ scale: 1.1 }}
-            className="text-xs px-2 py-1 bg-white/10 rounded-md text-gray-300"
+            className="text-xs px-2 py-1 bg-purple-500/10 rounded-md text-gray-300 border border-purple-500/20"
           >
             {skill}
-          </motion.span>
+          </span>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 function ProjectCard({ title, description, tags, link }) {
   return (
-    <motion.a
-      href={link}
-      target="_blank"
-      rel="noreferrer"
-      className="block"
-      whileHover={{ scale: 1.02 }}
-    >
-      <motion.div
-        whileHover={{ y: -10 }}
-        transition={{ type: "spring", stiffness: 300 }}
-        className="glass-card p-5 sm:p-8 rounded-2xl group hover:border-purple-500/50 transition-all"
-      >
+    <a href={link} target="_blank" rel="noreferrer" className="block">
+      <div className="glass-card p-5 sm:p-8 rounded-2xl group hover:border-purple-500/50 hover:bg-purple-500/5 transition-all">
         <div className="flex justify-between items-start mb-3 sm:mb-4 gap-2">
           <h3 className="text-base sm:text-xl font-bold group-hover:text-purple-400 transition-colors leading-tight">
             {title}
           </h3>
-          <motion.div
-            whileHover={{ rotate: 45, scale: 1.2 }}
-            transition={{ type: "spring", stiffness: 400 }}
-          >
-            <ExternalLink
-              size={16}
-              className="text-gray-500 group-hover:text-white flex-shrink-0 sm:w-[18px] sm:h-[18px]"
-            />
-          </motion.div>
+          <ExternalLink
+            size={16}
+            className="text-gray-500 group-hover:text-blue-400 flex-shrink-0 sm:w-[18px] sm:h-[18px] transition-colors"
+          />
         </div>
         <p className="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
           {description}
         </p>
         <div className="flex flex-wrap gap-2">
-          {tags.map((tag, index) => (
-            <motion.span
+          {tags.map((tag) => (
+            <span
               key={tag}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.05 }}
-              whileHover={{ scale: 1.1, y: -2 }}
               className="text-xs font-medium px-3 py-1 bg-purple-500/10 text-purple-300 rounded-full border border-purple-500/20"
             >
               {tag}
-            </motion.span>
+            </span>
           ))}
         </div>
-      </motion.div>
-    </motion.a>
+      </div>
+    </a>
   );
 }
 
 function Badge({ name }) {
   return (
-    <motion.span
-      whileHover={{ scale: 1.1, y: -2 }}
-      whileTap={{ scale: 0.95 }}
-      className="px-2 sm:px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-[10px] sm:text-xs text-gray-300 cursor-pointer"
-    >
+    <span className="px-2 sm:px-3 py-1 bg-purple-500/10 border border-purple-500/30 rounded-full text-[10px] sm:text-xs text-purple-300">
       {name}
-    </motion.span>
+    </span>
   );
 }
