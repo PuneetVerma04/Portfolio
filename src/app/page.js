@@ -48,16 +48,16 @@ export default function Portfolio() {
         transition={{ duration: 0.5 }}
         className="fixed w-full z-50 glass-nav"
       >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
           <motion.h1
             initial={{ rotate: -180, scale: 0 }}
             animate={{ rotate: 0, scale: 1 }}
             transition={{ type: "spring", stiffness: 200, delay: 0.3 }}
-            className="text-xl font-bold tracking-tighter"
+            className="text-lg sm:text-xl font-bold tracking-tighter"
           >
             PV.
           </motion.h1>
-          <div className="flex gap-6 text-sm text-gray-300">
+          <div className="hidden sm:flex gap-4 md:gap-6 text-xs sm:text-sm text-gray-300">
             <a href="#about" className="hover:text-white transition-colors">
               About
             </a>
@@ -78,28 +78,28 @@ export default function Portfolio() {
       </motion.nav>
 
       {/* Hero Section */}
-      <header className="pt-32 pb-20 px-6">
+      <header className="pt-20 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200, delay: 0.5 }}
-            className="glass-card p-1 rounded-full w-fit mb-6"
+            className="glass-card p-1 rounded-full w-fit mb-4 sm:mb-6"
           >
             <motion.span
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="px-4 py-1 text-xs font-medium text-purple-300 bg-purple-500/10 rounded-full border border-purple-500/20"
+              className="px-3 sm:px-4 py-1 text-[10px] sm:text-xs font-medium text-purple-300 bg-purple-500/10 rounded-full border border-purple-500/20"
             >
               Open to Work • 2026 Grad
             </motion.span>
           </motion.div>
-          <div className="flex items-center gap-6 mb-3">
+          <div className="flex items-center gap-3 sm:gap-6 mb-2 sm:mb-3">
             <motion.h1
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-5xl md:text-7xl font-bold"
+              className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight"
             >
               Hi, I&apos;m{" "}
               <span className="text-gradient animate-text-flow">
@@ -111,7 +111,7 @@ export default function Portfolio() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
-            className="text-lg md:text-xl text-gray-500 italic mb-6"
+            className="text-sm sm:text-lg md:text-xl text-gray-500 italic mb-4 sm:mb-6"
           >
             Building Differently
           </motion.p>
@@ -119,9 +119,11 @@ export default function Portfolio() {
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed mb-8"
+            className="text-base sm:text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed mb-6 sm:mb-8"
           >
-            Full Stack Developer & AI/ML Engineer. <br />
+            Full Stack Developer & AI/ML Engineer.{" "}
+            <br className="hidden sm:block" />
+            <span className="sm:inline"> </span>
             Bridging the gap between{" "}
             <span className="text-white">scalable .NET systems</span> and{" "}
             <span className="text-white">intelligent AI solutions</span>.
@@ -131,15 +133,16 @@ export default function Portfolio() {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="flex gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
             <motion.a
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               href="mailto:verma0404puneet@gmail.com"
-              className="flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all"
+              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all text-sm sm:text-base"
             >
-              <Mail size={20} /> verma0404puneet@gmail.com
+              <Mail size={18} className="sm:w-5 sm:h-5" />
+              <span className="truncate">verma0404puneet@gmail.com</span>
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05, y: -2 }}
@@ -147,9 +150,9 @@ export default function Portfolio() {
               href="https://github.com/PuneetVerma04"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-6 py-3 glass-card rounded-lg hover:bg-white/10 transition-all"
+              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 glass-card rounded-lg hover:bg-white/10 transition-all text-sm sm:text-base"
             >
-              <Github size={20} /> GitHub
+              <Github size={18} className="sm:w-5 sm:h-5" /> GitHub
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05, y: -2 }}
@@ -157,29 +160,29 @@ export default function Portfolio() {
               href="https://www.linkedin.com/in/puneet-verma-595176259/"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-6 py-3 glass-card rounded-lg hover:bg-white/10 transition-all"
+              className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 glass-card rounded-lg hover:bg-white/10 transition-all text-sm sm:text-base"
             >
-              <Linkedin size={20} /> LinkedIn
+              <Linkedin size={18} className="sm:w-5 sm:h-5" /> LinkedIn
             </motion.a>
           </motion.div>
         </div>
       </header>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-6">
+      <section id="skills" className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold mb-12 flex items-center gap-3"
+            className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 flex items-center gap-2 sm:gap-3"
           >
             <motion.div
               animate={{ y: [-5, 5, -5] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Terminal className="text-purple-400" />
+              <Terminal className="text-purple-400 w-6 h-6 sm:w-7 sm:h-7" />
             </motion.div>
             Technical Arsenal
           </motion.h2>
@@ -256,14 +259,14 @@ export default function Portfolio() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="py-20 px-6 bg-white/0">
+      <section id="projects" className="py-12 sm:py-20 px-4 sm:px-6 bg-white/0">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold mb-12"
+            className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12"
           >
             Projects
           </motion.h2>
@@ -328,8 +331,8 @@ export default function Portfolio() {
       </section>
 
       {/* Experience & Research */}
-      <section id="experience" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section id="experience" className="py-12 sm:py-20 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Work Experience */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -337,16 +340,20 @@ export default function Portfolio() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold mb-8">Experience</h2>
-            <div className="glass-card p-8 rounded-2xl relative hover-lift">
-              <div className="absolute top-0 left-8 -mt-3 bg-blue-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
+              Experience
+            </h2>
+            <div className="glass-card p-6 sm:p-8 rounded-2xl relative hover-lift">
+              <div className="absolute top-0 left-6 sm:left-8 -mt-3 bg-blue-500 text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 rounded-full uppercase tracking-wide">
                 Vocational Trainee
               </div>
-              <h3 className="text-xl font-bold mt-2">N.T.P.C. Ltd</h3>
-              <p className="text-gray-400 text-sm mb-4">
+              <h3 className="text-lg sm:text-xl font-bold mt-2">
+                N.T.P.C. Ltd
+              </h3>
+              <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                 June 2024 - July 2024 • Madhya Pradesh
               </p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 text-sm">
+              <ul className="list-disc list-inside text-gray-300 space-y-2 text-xs sm:text-sm">
                 <li>
                   Developed membership management system using ASP.NET & C#.
                 </li>
@@ -368,25 +375,27 @@ export default function Portfolio() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-3xl font-bold mb-8">Research & Certs</h2>
-            <div className="space-y-6">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
+              Research & Certs
+            </h2>
+            <div className="space-y-4 sm:space-y-6">
               <a
                 href="https://ieeexplore.ieee.org/document/11089241/"
                 target="_blank"
                 rel="noreferrer"
                 className="block"
               >
-                <div className="glass-card p-6 rounded-xl hover-lift group">
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-lg font-bold text-purple-300 group-hover:text-purple-200">
+                <div className="glass-card p-4 sm:p-6 rounded-xl hover-lift group">
+                  <div className="flex justify-between items-start gap-2">
+                    <h3 className="text-base sm:text-lg font-bold text-purple-300 group-hover:text-purple-200">
                       Drone Detection with YOLOv8
                     </h3>
                     <ExternalLink
-                      size={16}
-                      className="text-gray-500 group-hover:text-purple-300"
+                      size={14}
+                      className="text-gray-500 group-hover:text-purple-300 flex-shrink-0 sm:w-4 sm:h-4"
                     />
                   </div>
-                  <p className="text-sm text-gray-400 mt-2">
+                  <p className="text-xs sm:text-sm text-gray-400 mt-2">
                     Published at RAIT 2025, IIT Dhanbad
                   </p>
                 </div>
@@ -397,27 +406,27 @@ export default function Portfolio() {
                 rel="noreferrer"
                 className="block"
               >
-                <div className="glass-card p-6 rounded-xl hover-lift group">
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-lg font-bold text-purple-300 group-hover:text-purple-200">
+                <div className="glass-card p-4 sm:p-6 rounded-xl hover-lift group">
+                  <div className="flex justify-between items-start gap-2">
+                    <h3 className="text-base sm:text-lg font-bold text-purple-300 group-hover:text-purple-200">
                       Brake Light Detection
                     </h3>
                     <ExternalLink
-                      size={16}
-                      className="text-gray-500 group-hover:text-purple-300"
+                      size={14}
+                      className="text-gray-500 group-hover:text-purple-300 flex-shrink-0 sm:w-4 sm:h-4"
                     />
                   </div>
-                  <p className="text-sm text-gray-400 mt-2">
+                  <p className="text-xs sm:text-sm text-gray-400 mt-2">
                     Published at ACCTHPA 2025, Cochin
                   </p>
                 </div>
               </a>
 
-              <div className="pt-4">
-                <h3 className="text-lg font-semibold mb-4 text-gray-200">
+              <div className="pt-3 sm:pt-4">
+                <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-200">
                   Certifications
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   <Badge name="AWS Solutions Architect" />
                   <Badge name="OCI GenAI Professional" />
                   <Badge name="Postman API Expert" />
@@ -430,7 +439,7 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 text-center text-gray-500 text-sm glass-nav">
+      <footer className="py-6 sm:py-8 text-center text-gray-500 text-xs sm:text-sm glass-nav px-4">
         <p>© 2025 Puneet Verma. Built with Next.js & Tailwind.</p>
       </footer>
     </div>
@@ -443,16 +452,18 @@ function SkillCard({ icon, title, skills }) {
     <motion.div
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="glass-card p-6 rounded-2xl hover:bg-white/5 transition-all"
+      className="glass-card p-4 sm:p-6 rounded-2xl hover:bg-white/5 transition-all"
     >
       <motion.div
         whileHover={{ rotate: [0, -10, 10, -10, 0] }}
         transition={{ duration: 0.5 }}
-        className="mb-4"
+        className="mb-3 sm:mb-4"
       >
         {icon}
       </motion.div>
-      <h3 className="text-lg font-semibold mb-3">{title}</h3>
+      <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">
+        {title}
+      </h3>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (
           <motion.span
@@ -483,10 +494,10 @@ function ProjectCard({ title, description, tags, link }) {
       <motion.div
         whileHover={{ y: -10 }}
         transition={{ type: "spring", stiffness: 300 }}
-        className="glass-card p-8 rounded-2xl group hover:border-purple-500/50 transition-all"
+        className="glass-card p-5 sm:p-8 rounded-2xl group hover:border-purple-500/50 transition-all"
       >
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-bold group-hover:text-purple-400 transition-colors">
+        <div className="flex justify-between items-start mb-3 sm:mb-4 gap-2">
+          <h3 className="text-base sm:text-xl font-bold group-hover:text-purple-400 transition-colors leading-tight">
             {title}
           </h3>
           <motion.div
@@ -494,12 +505,12 @@ function ProjectCard({ title, description, tags, link }) {
             transition={{ type: "spring", stiffness: 400 }}
           >
             <ExternalLink
-              size={18}
-              className="text-gray-500 group-hover:text-white"
+              size={16}
+              className="text-gray-500 group-hover:text-white flex-shrink-0 sm:w-[18px] sm:h-[18px]"
             />
           </motion.div>
         </div>
-        <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+        <p className="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
           {description}
         </p>
         <div className="flex flex-wrap gap-2">
@@ -526,7 +537,7 @@ function Badge({ name }) {
     <motion.span
       whileHover={{ scale: 1.1, y: -2 }}
       whileTap={{ scale: 0.95 }}
-      className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs text-gray-300 cursor-pointer"
+      className="px-2 sm:px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-[10px] sm:text-xs text-gray-300 cursor-pointer"
     >
       {name}
     </motion.span>
