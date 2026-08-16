@@ -2,7 +2,7 @@
 
 A single-page portfolio showcasing my work as a full-stack & applied-AI engineer — built to demonstrate that I can deliver complete systems from backend to frontend, with a Spotify-inspired interface.
 
-🔗 **Live:** deployed on [Vercel](https://vercel.com)
+🔗 **Live:** [puneetverma.tech](https://puneetverma.tech)
 
 ---
 
@@ -27,7 +27,7 @@ Portfolio/                       # The app lives at the repo root
 ├── vite.config.ts               # Vite + Tailwind (base '/')
 ├── tsconfig*.json               # TypeScript project references
 ├── eslint.config.js
-├── public/                      # favicon.svg, resume PDF, og-image
+├── public/                      # favicon.svg, resume PDF (og-image not yet added — see below)
 └── src/
     ├── main.tsx                 # Entry point
     ├── App.tsx                  # Spotify app-shell composition
@@ -67,22 +67,19 @@ npm run lint     # ESLint
 Hosted on **Vercel**, connected to this GitHub repo. Every push to `master` triggers a production
 deploy; pull requests get preview deployments automatically.
 
-Vercel auto-detects the Vite framework — no `vercel.json` required. Expected project settings:
+[`vercel.json`](vercel.json) is tracked at the repo root and pins the project settings explicitly:
 
 | Setting | Value |
 |---|---|
 | Framework Preset | Vite |
 | Root Directory | `./` (repo root) |
-| Build Command | `npm run build` (or `vite build`) |
+| Build Command | `vite build` |
 | Output Directory | `dist` |
 
 ---
 
-## ✅ Personalize before publishing
+## License
 
-A few placeholders in [`src/data/resume.ts`](src/data/resume.ts) are marked with `TODO`:
+MIT — see [LICENSE](LICENSE).
 
-- Add real **repo / live URLs** for each project (currently point to the GitHub profile).
-- Add **DOI / proceedings links** for the two research papers.
-- Add `public/og-image.png` (1200×630) for social-share previews, and update the `og:url`
-  in [`index.html`](index.html) to your live Vercel domain.
+TODO: `public/og-image.png` (1200×630) for social-share previews is not yet added.

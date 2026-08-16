@@ -1,9 +1,6 @@
 /**
  * Single source of truth for all portfolio content.
  * Edit values here — components read from this module.
- *
- * TODO(puneet): add real repo/live URLs for the projects and DOI/proceedings
- * links for the research papers where marked.
  */
 
 export const profile = {
@@ -66,7 +63,6 @@ export type Project = {
   blurb: string;
   highlights: string[];
   tech: string[];
-  // TODO: confirm/add real repo + live URLs
   repoUrl?: string;
   liveUrl?: string;
 };
@@ -78,12 +74,12 @@ export const projects: Project[] = [
       "A full-stack game catalog and storefront built on a clean, configuration-driven architecture.",
     highlights: [
       "RESTful APIs in ASP.NET Core with async CRUD operations and input validation",
-      "Entity Framework Core with repository-style patterns and configuration-driven services",
+      "Entity Framework Core with a service-layer architecture, AutoMapper projections, and FluentValidation",
       "Angular 21 frontend — lazy-loaded feature modules, RxJS BehaviorSubject state, Angular Material for catalog, cart, and checkout",
       "Frontend–backend integration via HttpClient with clean separation of concerns",
     ],
     tech: ["ASP.NET Core", "EF Core", "Angular 21", "RxJS", "C#", "SQL Server"],
-    repoUrl: "https://github.com/PuneetVerma04",
+    repoUrl: "https://github.com/PuneetVerma04/Aphelion-Backend",
   },
   {
     name: "RAG-Based PDF Insight Generator",
@@ -95,7 +91,7 @@ export const projects: Project[] = [
       "Local inference via Ollama — no data leaves the machine",
     ],
     tech: ["LangChain", "LangGraph", "Ollama", "Python", "RAG"],
-    repoUrl: "https://github.com/PuneetVerma04",
+    repoUrl: "https://github.com/PuneetVerma04/RAG-Based-PDF-Insight-Generator",
   },
 ];
 
@@ -152,7 +148,6 @@ export const leadership: Leadership[] = [
 export type Publication = {
   title: string;
   venue: string;
-  // TODO: add DOI / proceedings links when available
   url?: string;
 };
 
